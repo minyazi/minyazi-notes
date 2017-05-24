@@ -3,20 +3,21 @@
 * [二、基本配置](#anchor2)
 * [三、配置依赖](#anchor3)
 * [四、依赖范围](#anchor4)
-* [五、配置Maven属性](#anchor5)
-* [六、配置Java编译器版本](#anchor6)
-* [七、配置本地仓库](#anchor7)
-* [八、配置依赖的远程仓库](#anchor8)
-* [九、配置插件的远程仓库](#anchor9)
-* [十、配置仓库镜像](#anchor10)
-* [十一、配置远程仓库/仓库镜像的认证信息](#anchor11)
-* [十二、将项目生成的构件部署到远程仓库中](#anchor12)
-* [十三、Maven生命周期和插件](#anchor13)
-* [十四、借助maven-shade-plugin插件生成可执行的jar包](#anchor14)
-* [十五、借助maven-source-plugin插件生成源码的jar包](#anchor15)
-* [十六、借助maven-javadoc-plugin插件生成javadoc文档的jar包](#anchor16)
-* [十七、借助maven-dependency-plugin插件将依赖jar包拷贝到指定目录](#anchor17)
-* [十八、配置生成可执行jar包（包含运行时依赖jar包的Classpath配置）](#anchor18)
+* [五、配置本地仓库](#anchor5)
+* [六、配置依赖的远程仓库](#anchor6)
+* [七、配置插件的远程仓库](#anchor7)
+* [八、配置仓库镜像](#anchor8)
+* [九、配置远程仓库/仓库镜像的认证信息](#anchor9)
+* [十、将项目生成的构件部署到远程仓库中](#anchor10)
+* [十一、Maven生命周期和插件](#anchor11)
+* [十二、配置Maven属性](#anchor12)
+* [十三、配置Java编译器版本](#anchor13)
+* [十四、配置处理资源文件时的编码](#anchor14)
+* [十五、借助maven-shade-plugin插件生成可执行的jar包](#anchor15)
+* [十六、借助maven-dependency-plugin插件将依赖jar包拷贝到指定目录](#anchor16)
+* [十七、配置生成可执行jar包（包含运行时依赖jar包的Classpath配置）](#anchor17)
+* [十八、借助maven-source-plugin插件生成源码的jar包](#anchor18)
+* [十九、借助maven-javadoc-plugin插件生成javadoc文档的jar包](#anchor19)
 
 ## <a name="anchor1">一、Maven命令</a>
 **mvn [options] [<goal(s)>] [<phase(s)>]**
@@ -99,52 +100,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 5. system：系统依赖范围。
 6. import：导入依赖范围。
 
-## <a name="anchor5">五、配置Maven属性</a>
-**pom.xml**
-```xml
-<project>
-    ...
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
-    ...
-</project>
-```
-
-## <a name="anchor6">六、配置Java编译器版本</a>
-**pom.xml**
-```xml
-<project>
-    ...
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-    ...
-</project>
-```
-或者
-```xml
-<project>
-    ...
-    <properties>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
-    </properties>
-    ...
-</project>
-```
-
-## <a name="anchor7">七、配置本地仓库</a>
+## <a name="anchor5">五、配置本地仓库</a>
 **settings.xml**
 ```xml
 <settings>
@@ -154,7 +110,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 </settings>
 ```
 
-## <a name="anchor8">八、配置依赖的远程仓库</a>
+## <a name="anchor6">六、配置依赖的远程仓库</a>
 **pom.xml**
 ```xml
 <project>
@@ -180,7 +136,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 </project>
 ```
 
-## <a name="anchor9">九、配置插件的远程仓库</a>
+## <a name="anchor7">七、配置插件的远程仓库</a>
 **pom.xml**
 ```xml
 <project>
@@ -203,7 +159,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 </project>
 ```
 
-## <a name="anchor10">十、配置仓库镜像</a>
+## <a name="anchor8">八、配置仓库镜像</a>
 **settings.xml**
 ```xml
 <settings>
@@ -220,7 +176,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 </settings>
 ```
 
-## <a name="anchor11">十一、配置远程仓库/仓库镜像的认证信息</a>
+## <a name="anchor9">九、配置远程仓库/仓库镜像的认证信息</a>
 **settings.xml**
 ```xml
 <settings>
@@ -236,7 +192,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 </settings>
 ```
 
-## <a name="anchor12">十二、将项目生成的构件部署到远程仓库中</a>
+## <a name="anchor10">十、将项目生成的构件部署到远程仓库中</a>
 **pom.xml**
 ```xml
 <project>
@@ -265,7 +221,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 </project>
 ```
 
-## <a name="anchor13">十三、Maven生命周期和插件</a>
+## <a name="anchor11">十一、Maven生命周期和插件</a>
 1. clean生命周期。该生命周期的目的是清理项目，其包含如下阶段：
 ```xml
 <phases>
@@ -471,7 +427,80 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 | post-site   |             |
 | site-deploy | site:deploy |
 
-## <a name="anchor14">十四、借助maven-shade-plugin插件生成可执行的jar包</a>
+## <a name="anchor12">十二、配置Maven属性</a>
+**pom.xml**
+```xml
+<project>
+    ...
+    <properties>
+        <java.version>1.8</java.version>
+        <project.encoding>UTF-8</project.encoding>
+        <!-- 文件拷贝时的编码 -->
+        <project.build.sourceEncoding>${project.encoding}</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${project.encoding}</project.reporting.outputEncoding>
+        <!-- 编译时的编码 -->
+        <maven.compiler.encoding>${project.encoding}</maven.compiler.encoding>
+	</properties>
+    ...
+</project>
+```
+
+## <a name="anchor13">十三、配置Java编译器版本</a>
+**pom.xml**
+```xml
+<project>
+    ...
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.encoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    ...
+</project>
+```
+或者
+```xml
+<project>
+    ...
+    <properties>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+    </properties>
+    ...
+</project>
+```
+
+## <a name="anchor14">十四、配置处理资源文件时的编码</a>
+**pom.xml**
+```xml
+<project>
+    ...
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <encoding>${project.encoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    ...
+</project>
+```
+
+## <a name="anchor15">十五、借助maven-shade-plugin插件生成可执行的jar包</a>
 **PS**：该方式会同时打包运行时依赖jar包中的内容。
 ```xml
 <project>
@@ -504,57 +533,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 </project>
 ```
 
-## <a name="anchor15">十五、借助maven-source-plugin插件生成源码的jar包</a>
-```xml
-<project>
-    ...
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>3.0.1</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>jar-no-fork</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
-    ...
-</project>
-```
-
-## <a name="anchor16">十六、借助maven-javadoc-plugin插件生成javadoc文档的jar包</a>
-```xml
-<project>
-    ...
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.10.4</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
-    ...
-</project>
-```
-
-## <a name="anchor17">十七、借助maven-dependency-plugin插件将依赖jar包拷贝到指定目录</a>
+## <a name="anchor16">十六、借助maven-dependency-plugin插件将依赖jar包拷贝到指定目录</a>
 ```xml
 <project>
     ...
@@ -582,7 +561,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 </project>
 ```
 
-## <a name="anchor18">十八、配置生成可执行jar包（包含运行时依赖jar包的Classpath配置）</a>
+## <a name="anchor17">十七、配置生成可执行jar包（包含运行时依赖jar包的Classpath配置）</a>
 ```xml
 <project>
     ...
@@ -602,6 +581,56 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
                         </manifest>
                     </archive>
                 </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    ...
+</project>
+```
+
+## <a name="anchor18">十八、借助maven-source-plugin插件生成源码的jar包</a>
+```xml
+<project>
+    ...
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    ...
+</project>
+```
+
+## <a name="anchor19">十九、借助maven-javadoc-plugin插件生成javadoc文档的jar包</a>
+```xml
+<project>
+    ...
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
