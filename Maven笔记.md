@@ -1,21 +1,21 @@
 # Maven笔记
-* [Maven命令](#anchor1)
-* [基本配置](#基本配置)
-* [配置依赖](#配置依赖)
-* [依赖范围](#依赖范围)
-* [配置Maven属性](#anchor2)
-* [配置Java编译器版本](#anchor3)
-* [借助maven-shade-plugin插件生成可执行的jar包](#anchor4)
-* [配置本地仓库](#配置本地仓库)
-* [配置依赖的远程仓库](#配置依赖的远程仓库)
-* [配置插件的远程仓库](#配置插件的远程仓库)
-* [配置仓库镜像](#配置仓库镜像)
-* [配置远程仓库/仓库镜像的认证信息](#anchor5)
-* [将项目生成的构件部署到远程仓库中](#将项目生成的构件部署到远程仓库中)
-* [Maven生命周期和插件](#anchor6)
-* [借助maven-source-plugin插件生成源码的jar包](#anchor7)
+* [一、Maven命令](#anchor1)
+* [二、基本配置](#anchor2)
+* [三、配置依赖](#anchor3)
+* [四、依赖范围](#anchor4)
+* [五、配置Maven属性](#anchor5)
+* [六、配置Java编译器版本](#anchor6)
+* [七、配置本地仓库](#anchor7)
+* [八、配置依赖的远程仓库](#anchor8)
+* [九、配置插件的远程仓库](#anchor9)
+* [十、配置仓库镜像](#anchor10)
+* [十一、配置远程仓库/仓库镜像的认证信息](#anchor11)
+* [十二、将项目生成的构件部署到远程仓库中](#anchor12)
+* [十三、Maven生命周期和插件](#anchor13)
+* [十四、借助maven-shade-plugin插件生成可执行的jar包](#anchor14)
+* [十五、借助maven-source-plugin插件生成源码的jar包](#anchor15)
 
-## <a name="anchor1">Maven命令</a>
+## <a name="anchor1">一、Maven命令</a>
 **mvn [options] [<goal(s)>] [<phase(s)>]**
 ```bash
 echo %M2_HOME%                ##环境变量：Maven安装目录
@@ -45,7 +45,7 @@ mvn -U ...                    ##强制检查远程仓库中的构件更新
 mvn archetype:generate        ##使用Archetype插件创建项目骨架
 ```
 
-## 基本配置
+## <a name="anchor2">二、基本配置</a>
 **pom.xml**
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -60,7 +60,7 @@ mvn archetype:generate        ##使用Archetype插件创建项目骨架
 </project>
 ```
 
-## 配置依赖
+## <a name="anchor3">三、配置依赖</a>
 **pom.xml**
 ```xml
 <project>
@@ -77,7 +77,7 @@ mvn archetype:generate        ##使用Archetype插件创建项目骨架
 </project>
 ```
 
-## 依赖范围
+## <a name="anchor4">四、依赖范围</a>
 **scope**
 1. compile：**默认**，编译依赖范围。
 2. test：测试范围依赖。
@@ -86,7 +86,7 @@ mvn archetype:generate        ##使用Archetype插件创建项目骨架
 5. system：系统依赖范围。
 6. import：导入依赖范围。
 
-## <a name="anchor2">配置Maven属性</a>
+## <a name="anchor5">五、配置Maven属性</a>
 **pom.xml**
 ```xml
 <project>
@@ -98,7 +98,7 @@ mvn archetype:generate        ##使用Archetype插件创建项目骨架
 </project>
 ```
 
-## <a name="anchor3">配置Java编译器版本</a>
+## <a name="anchor6">六、配置Java编译器版本</a>
 **pom.xml**
 ```xml
 <project>
@@ -120,39 +120,7 @@ mvn archetype:generate        ##使用Archetype插件创建项目骨架
 </project>
 ```
 
-## <a name="anchor4">借助maven-shade-plugin插件生成可执行的jar包</a>
-```xml
-<project>
-    ...
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.0.0</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                        <configuration>
-                            <transformers>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.minyazi.mvntest.helloworld.HelloWorld</mainClass>
-                                </transformer>
-                            </transformers>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
-    ...
-</project>
-```
-
-## 配置本地仓库
+## <a name="anchor7">七、配置本地仓库</a>
 **settings.xml**
 ```xml
 <settings>
@@ -162,7 +130,7 @@ mvn archetype:generate        ##使用Archetype插件创建项目骨架
 </settings>
 ```
 
-## 配置依赖的远程仓库
+## <a name="anchor8">八、配置依赖的远程仓库</a>
 **pom.xml**
 ```xml
 <project>
@@ -188,7 +156,7 @@ mvn archetype:generate        ##使用Archetype插件创建项目骨架
 </project>
 ```
 
-## 配置插件的远程仓库
+## <a name="anchor9">九、配置插件的远程仓库</a>
 **pom.xml**
 ```xml
 <project>
@@ -211,7 +179,7 @@ mvn archetype:generate        ##使用Archetype插件创建项目骨架
 </project>
 ```
 
-## 配置仓库镜像
+## <a name="anchor10">十、配置仓库镜像</a>
 **settings.xml**
 ```xml
 <settings>
@@ -228,7 +196,7 @@ mvn archetype:generate        ##使用Archetype插件创建项目骨架
 </settings>
 ```
 
-## <a name="anchor5">配置远程仓库/仓库镜像的认证信息</a>
+## <a name="anchor11">十一、配置远程仓库/仓库镜像的认证信息</a>
 **settings.xml**
 ```xml
 <settings>
@@ -244,7 +212,7 @@ mvn archetype:generate        ##使用Archetype插件创建项目骨架
 </settings>
 ```
 
-## 将项目生成的构件部署到远程仓库中
+## <a name="anchor12">十二、将项目生成的构件部署到远程仓库中</a>
 **pom.xml**
 ```xml
 <project>
@@ -273,7 +241,7 @@ mvn archetype:generate        ##使用Archetype插件创建项目骨架
 </project>
 ```
 
-## <a name="anchor6">Maven生命周期和插件</a>
+## <a name="anchor13">十三、Maven生命周期和插件</a>
 1. clean生命周期
 该生命周期的目的是清理项目，其包含如下阶段：
 ```xml
@@ -482,7 +450,39 @@ mvn archetype:generate        ##使用Archetype插件创建项目骨架
 | post-site   |             |
 | site-deploy | site:deploy |
 
-## <a name="anchor7">借助maven-source-plugin插件生成源码的jar包</a>
+## <a name="anchor14">十四、借助maven-shade-plugin插件生成可执行的jar包</a>
+```xml
+<project>
+    ...
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>com.minyazi.mvntest.helloworld.HelloWorld</mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    ...
+</project>
+```
+
+## <a name="anchor15">十五、借助maven-source-plugin插件生成源码的jar包</a>
 ```xml
 <project>
     ...
