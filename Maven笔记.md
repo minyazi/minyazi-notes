@@ -40,9 +40,19 @@ mvn clean package             ##执行到clean生命周期的clean阶段和defau
 mvn clean install             ##执行到clean生命周期的clean阶段和default生命周期的install阶段
 mvn clean deploy              ##执行到clean生命周期的clean阶段和default生命周期的deploy阶段
 mvn clean deploy site-deploy  ##执行到clean生命周期的clean阶段和default生命周期的deploy阶段，以及site生命周期的site-deploy阶段
-mvn -U ...                    ##强制检查远程仓库中的构件更新
+mvn clean install -U          ##强制检查远程仓库中的构件更新
 
 mvn archetype:generate        ##使用Archetype插件创建项目骨架
+
+##查看maven-compiler-plugin插件2.1版本的简要信息
+mvn help:describe -Dplugin=org.apache.maven.plugins:maven-compiler-plugin:2.1
+##查看maven-compiler-plugin插件2.1版本的详细信息
+mvn help:describe -Dplugin=org.apache.maven.plugins:maven-compiler-plugin:2.1 -Ddetail
+##查看maven-compiler-plugin插件最新版本的简要信息
+mvn help:describe -Dplugin=org.apache.maven.plugins:maven-compiler-plugin
+mvn help:describe -Dplugin=compiler
+mvn help:describe -Dplugin=compiler -Dgoal=compile
+mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 ```
 
 ## <a name="anchor2">二、基本配置</a>
@@ -116,6 +126,17 @@ mvn archetype:generate        ##使用Archetype插件创建项目骨架
             </plugin>
         </plugins>
     </build>
+    ...
+</project>
+```
+或者
+```xml
+<project>
+    ...
+    <properties>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+    </properties>
     ...
 </project>
 ```
@@ -242,8 +263,7 @@ mvn archetype:generate        ##使用Archetype插件创建项目骨架
 ```
 
 ## <a name="anchor13">十三、Maven生命周期和插件</a>
-1. clean生命周期
-该生命周期的目的是清理项目，其包含如下阶段：
+1. clean生命周期。该生命周期的目的是清理项目，其包含如下阶段：
 ```xml
 <phases>
     <phase>pre-clean</phase>      <!-- 执行一些清理前需要完成的工作 -->
@@ -251,8 +271,7 @@ mvn archetype:generate        ##使用Archetype插件创建项目骨架
     <phase>post-clean</phase>     <!-- 执行一些清理后需要完成的工作 -->
 </phases>
 ```
-2. default生命周期
-该生命周期定义了真正构建时所需要执行的所有步骤，它是所有生命周期中最核心的部分，其包含的阶段如下：
+2. default生命周期。该生命周期定义了真正构建时所需要执行的所有步骤，它是所有生命周期中最核心的部分，其包含的阶段如下：
 ```xml
 <phases>
     <phase>validate</phase>                    <!--  -->
@@ -280,8 +299,7 @@ mvn archetype:generate        ##使用Archetype插件创建项目骨架
     <phase>deploy</phase>                      <!-- 将最终的包复制到远程仓库，供其他开发人员和Maven项目使用 -->
 </phases>
 ```
-3. site生命周期
-该生命周期的目的是建立和发布项目站点，其包含如下阶段：
+3. site生命周期。该生命周期的目的是建立和发布项目站点，其包含如下阶段：
 ```xml
 <phases>
     <phase>pre-site</phase>        <!-- 执行一些在生成项目站点之前需要完成的工作 -->
