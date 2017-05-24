@@ -14,6 +14,9 @@
 * [十三、Maven生命周期和插件](#anchor13)
 * [十四、借助maven-shade-plugin插件生成可执行的jar包](#anchor14)
 * [十五、借助maven-source-plugin插件生成源码的jar包](#anchor15)
+* [十六、借助maven-javadoc-plugin插件生成javadoc文档的jar包](#anchor16)
+* [十七、借助maven-dependency-plugin插件将依赖jar包拷贝到指定目录](#anchor17)
+* [十八、配置生成可执行jar包（包含运行时依赖jar包的Classpath配置）](#anchor18)
 
 ## <a name="anchor1">一、Maven命令</a>
 **mvn [options] [<goal(s)>] [<phase(s)>]**
@@ -469,6 +472,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 | site-deploy | site:deploy |
 
 ## <a name="anchor14">十四、借助maven-shade-plugin插件生成可执行的jar包</a>
+**PS**：该方式会同时打包运行时依赖jar包中的内容。
 ```xml
 <project>
     ...
@@ -518,6 +522,86 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+        </plugins>
+    </build>
+    ...
+</project>
+```
+
+## <a name="anchor16">十六、借助maven-javadoc-plugin插件生成javadoc文档的jar包</a>
+```xml
+<project>
+    ...
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    ...
+</project>
+```
+
+## <a name="anchor17">十七、借助maven-dependency-plugin插件将依赖jar包拷贝到指定目录</a>
+```xml
+<project>
+    ...
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    ...
+</project>
+```
+
+## <a name="anchor18">十八、配置生成可执行jar包（包含运行时依赖jar包的Classpath配置）</a>
+```xml
+<project>
+    ...
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <archive>
+                        <index>true</index>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>com.minyazi.mvntest.helloworld.HelloWorld</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
             </plugin>
         </plugins>
     </build>
