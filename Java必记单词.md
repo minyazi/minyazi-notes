@@ -130,6 +130,8 @@ object
 ## P
 ```
 package
+phase               [feɪz]              阶段
+plugin              [plʌgɪn]            插件
 pointer
 private
 process
@@ -202,8 +204,10 @@ while
 
 ## 词组
 ```
+AI                  Artificial Intelligence                      人工智能
 AJAX                Asynchronous Javascript And XML              异步JavaScript和XML
 AOP                 Aspect Oriented Programming                  面向切面编程
+AR                  Augmented Reality                            增强现实
 CDN                 Content Delivery Network                     内容分发网络
 CPU                 Central Processing Unit                      中央处理器
 DI                  Dependency Injection                         依赖注入
@@ -216,6 +220,7 @@ JDBC                Java Data Base Connectivity                  Java数据库�
 JMS                 Java Message Service                         Java消息服务
 JSON                JavaScript Object Notation                   JavaScript对象标记语言
 JVM                 Java Virtual Machine                         Java虚拟机
+ML                  Machine Learning                             机器学习
 OOP                 Object Oriented Programming                  面向对象编程
 SQL                 Structured Query Language                    结构化查询语言
 RPC                 Remote Procedure Call Protocol               远程过程调用协议
@@ -225,6 +230,7 @@ TCP                 Transmission Control Protocol                传输控制协
 URI                 Uniform Resource Identifier                  统一资源标识符
 URL                 Uniform Resource Locator                     统一资源定位符
 VPN                 Virtual Private Network                      虚拟专用网络
+VR                  Virtual Reality                              虚拟现实
 WWW                 World Wide Web                               万维网
 W3C                 World Wide Web Consortium                    万维网联盟
 XML                 Extensible Markup Language                   可扩展标记语言
