@@ -573,7 +573,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
                 <version>2.4</version>
                 <configuration>
                     <archive>
-                        <index>true</index>
+                        <addMavenDescriptor>false</addMavenDescriptor>
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
@@ -604,6 +604,11 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
                         <goals>
                             <goal>jar-no-fork</goal>
                         </goals>
+                        <configuration>
+                            <archive>
+                                <addMavenDescriptor>false</addMavenDescriptor>
+                            </archive>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
