@@ -1,4 +1,5 @@
 # Maven笔记
+* [Maven标准目录布局](#anchor0)
 * [一、Maven命令](#anchor1)
 * [二、基本配置](#anchor2)
 * [三、配置依赖](#anchor3)
@@ -18,6 +19,11 @@
 * [十七、配置生成可执行jar包（包含运行时依赖jar包的Classpath配置）](#anchor17)
 * [十八、借助maven-source-plugin插件生成源码的jar包](#anchor18)
 * [十九、借助maven-javadoc-plugin插件生成javadoc文档的jar包](#anchor19)
+* [二十、Maven聚合与继承](#anchor20)
+* [二十一、使用Maven构建Web应用](#anchor21)
+
+## <a name="anchor0">Maven标准目录布局</a>
+![Maven标准目录布局](images/Maven标准目录布局.png "Maven标准目录布局")
 
 ## <a name="anchor1">一、Maven命令</a>
 **mvn [options] [<goal(s)>] [<phase(s)>]**
@@ -641,4 +647,14 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
     </build>
     ...
 </project>
+```
+
+## <a name="anchor20">二十、Maven聚合与继承</a>
+```
+
+```
+
+## <a name="anchor21">二十一、使用Maven构建Web应用</a>
+```
+
 ```
