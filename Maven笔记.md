@@ -1,4 +1,4 @@
-# Maven笔记
+# <a name="top">Maven笔记</a>
 * [Maven标准目录布局](#anchor0)
 * [一、Maven命令](#anchor1)
 * [二、基本配置](#anchor2)
@@ -25,7 +25,7 @@
 ## <a name="anchor0">Maven标准目录布局</a>
 ![Maven标准目录布局](images/Maven标准目录布局.png "Maven标准目录布局")
 
-## <a name="anchor1">一、Maven命令</a>
+## <a name="anchor1">一、Maven命令</a>[【TOP】](#top)
 **mvn [options] [<goal(s)>] [<phase(s)>]**
 ```bash
 echo %M2_HOME%                ##环境变量：Maven安装目录
@@ -65,7 +65,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile
 mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 ```
 
-## <a name="anchor2">二、基本配置</a>
+## <a name="anchor2">二、基本配置</a>[【TOP】](#top)
 **pom.xml**
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -80,7 +80,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 </project>
 ```
 
-## <a name="anchor3">三、配置依赖</a>
+## <a name="anchor3">三、配置依赖</a>[【TOP】](#top)
 **pom.xml**
 ```xml
 <project>
@@ -97,7 +97,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 </project>
 ```
 
-## <a name="anchor4">四、依赖范围</a>
+## <a name="anchor4">四、依赖范围</a>[【TOP】](#top)
 **scope**
 1. compile：**默认**，编译依赖范围。
 2. test：测试范围依赖。
@@ -106,7 +106,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 5. system：系统依赖范围。
 6. import：导入依赖范围。
 
-## <a name="anchor5">五、配置本地仓库</a>
+## <a name="anchor5">五、配置本地仓库</a>[【TOP】](#top)
 **settings.xml**
 ```xml
 <settings>
@@ -116,7 +116,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 </settings>
 ```
 
-## <a name="anchor6">六、配置依赖的远程仓库</a>
+## <a name="anchor6">六、配置依赖的远程仓库</a>[【TOP】](#top)
 **pom.xml**
 ```xml
 <project>
@@ -142,7 +142,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 </project>
 ```
 
-## <a name="anchor7">七、配置插件的远程仓库</a>
+## <a name="anchor7">七、配置插件的远程仓库</a>[【TOP】](#top)
 **pom.xml**
 ```xml
 <project>
@@ -165,7 +165,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 </project>
 ```
 
-## <a name="anchor8">八、配置仓库镜像</a>
+## <a name="anchor8">八、配置仓库镜像</a>[【TOP】](#top)
 **settings.xml**
 ```xml
 <settings>
@@ -182,7 +182,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 </settings>
 ```
 
-## <a name="anchor9">九、配置远程仓库/仓库镜像的认证信息</a>
+## <a name="anchor9">九、配置远程仓库/仓库镜像的认证信息</a>[【TOP】](#top)
 **settings.xml**
 ```xml
 <settings>
@@ -198,7 +198,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 </settings>
 ```
 
-## <a name="anchor10">十、将项目生成的构件部署到远程仓库中</a>
+## <a name="anchor10">十、将项目生成的构件部署到远程仓库中</a>[【TOP】](#top)
 **pom.xml**
 ```xml
 <project>
@@ -227,7 +227,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 </project>
 ```
 
-## <a name="anchor11">十一、Maven生命周期和插件</a>
+## <a name="anchor11">十一、Maven生命周期和插件</a>[【TOP】](#top)
 1. clean生命周期。该生命周期的目的是清理项目，其包含如下阶段：
 ```xml
 <phases>
@@ -433,7 +433,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 | post-site   |             |
 | site-deploy | site:deploy |
 
-## <a name="anchor12">十二、配置Maven属性</a>
+## <a name="anchor12">十二、配置Maven属性</a>[【TOP】](#top)
 **pom.xml**
 ```xml
 <project>
@@ -451,7 +451,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 </project>
 ```
 
-## <a name="anchor13">十三、配置Java编译器版本</a>
+## <a name="anchor13">十三、配置Java编译器版本</a>[【TOP】](#top)
 **pom.xml**
 ```xml
 <project>
@@ -485,7 +485,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 </project>
 ```
 
-## <a name="anchor14">十四、配置处理资源文件时的编码</a>
+## <a name="anchor14">十四、配置处理资源文件时的编码</a>[【TOP】](#top)
 **pom.xml**
 ```xml
 <project>
@@ -506,7 +506,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 </project>
 ```
 
-## <a name="anchor15">十五、借助maven-shade-plugin插件生成可执行的jar包</a>
+## <a name="anchor15">十五、借助maven-shade-plugin插件生成可执行的jar包</a>[【TOP】](#top)
 **PS**：该方式会同时打包运行时依赖jar包中的内容。
 ```xml
 <project>
@@ -539,7 +539,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 </project>
 ```
 
-## <a name="anchor16">十六、借助maven-dependency-plugin插件将依赖jar包拷贝到指定目录</a>
+## <a name="anchor16">十六、借助maven-dependency-plugin插件将依赖jar包拷贝到指定目录</a>[【TOP】](#top)
 ```xml
 <project>
     ...
@@ -567,7 +567,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 </project>
 ```
 
-## <a name="anchor17">十七、配置生成可执行jar包（包含运行时依赖jar包的Classpath配置）</a>
+## <a name="anchor17">十七、配置生成可执行jar包（包含运行时依赖jar包的Classpath配置）</a>[【TOP】](#top)
 ```xml
 <project>
     ...
@@ -594,7 +594,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 </project>
 ```
 
-## <a name="anchor18">十八、借助maven-source-plugin插件生成源码的jar包</a>
+## <a name="anchor18">十八、借助maven-source-plugin插件生成源码的jar包</a>[【TOP】](#top)
 ```xml
 <project>
     ...
@@ -624,7 +624,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 </project>
 ```
 
-## <a name="anchor19">十九、借助maven-javadoc-plugin插件生成javadoc文档的jar包</a>
+## <a name="anchor19">十九、借助maven-javadoc-plugin插件生成javadoc文档的jar包</a>[【TOP】](#top)
 ```xml
 <project>
     ...
@@ -649,12 +649,12 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 </project>
 ```
 
-## <a name="anchor20">二十、Maven聚合与继承</a>
+## <a name="anchor20">二十、Maven聚合与继承</a>[【TOP】](#top)
 ```
 
 ```
 
-## <a name="anchor21">二十一、使用Maven构建Web应用</a>
+## <a name="anchor21">二十一、使用Maven构建Web应用</a>[【TOP】](#top)
 ```
 
 ```
