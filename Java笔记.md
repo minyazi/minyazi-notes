@@ -1,4 +1,4 @@
-# <a name="top">我的日常总结</a>
+# <a name="top">Java笔记</a>
 * [一、Struts2](#anchor1)
 * [二、Java接口](#anchor2)
 * [三、多线程](#anchor3)
