@@ -1,4 +1,4 @@
-# Java必记单词
+# <a name="top">Java必记单词</a>
 [A](#a)&nbsp;&nbsp;&nbsp;
 [B](#b)&nbsp;&nbsp;&nbsp;
 [C](#c)&nbsp;&nbsp;&nbsp;
@@ -25,9 +25,9 @@
 [X](#x)&nbsp;&nbsp;&nbsp;
 [Y](#y)&nbsp;&nbsp;&nbsp;
 [Z](#z)&nbsp;&nbsp;&nbsp;
-[词组](#词组)
+[词组](#word)
 
-## A
+## <a name="a">A</a>[【TOP】](#top)
 ```
 analyse             ['æn(ə)laɪz]        分析
 analyze             ['ænə,laɪz]         分析
@@ -35,7 +35,7 @@ archetype           ['ɑːkɪtaɪp]         原型
 artifact            ['ɑ:təˌfækt]
 ```
 
-## B
+## <a name="b">B</a>[【TOP】](#top)
 ```
 boolean             ['bʊlɪən]
 break
@@ -44,7 +44,7 @@ builder
 byte
 ```
 
-## C
+## <a name="c">C</a>[【TOP】](#top)
 ```
 character           ['kærəktə]
 class
@@ -53,37 +53,37 @@ continue
 control
 ```
 
-## D
+## <a name="d">D</a>[【TOP】](#top)
 ```
 default
 dependency          [dɪ'pend(ə)nsɪ]     依赖
 double
 ```
 
-## E
+## <a name="e">E</a>[【TOP】](#top)
 ```
 enum                ['enəm]
 exception
 expression
 ```
 
-## F
+## <a name="f">F</a>[【TOP】](#top)
 ```
 float
 friendly
 ```
 
-## G
+## <a name="g">G</a>[【TOP】](#top)
 ```
 
 ```
 
-## H
+## <a name="h">H</a>[【TOP】](#top)
 ```
 host                [həʊst]             主机
 ```
 
-## I
+## <a name="i">I</a>[【TOP】](#top)
 ```
 initialization      [ɪ,nɪʃəlaɪ'zeɪʃən]  初始化
 injection           [ɪn'dʒekʃ(ə)n]      注入
@@ -92,17 +92,17 @@ integral            [ˈɪntɪɡrəl]
 inversion           [ɪn'vɜːʃ(ə)n]
 ```
 
-## J
+## <a name="j">J</a>[【TOP】](#top)
 ```
 
 ```
 
-## K
+## <a name="k">K</a>[【TOP】](#top)
 ```
 
 ```
 
-## L
+## <a name="l">L</a>[【TOP】](#top)
 ```
 letter
 loader
@@ -111,23 +111,23 @@ loop
 lowercase
 ```
 
-## M
+## <a name="m">M</a>[【TOP】](#top)
 ```
 manager
 math
 ```
 
-## N
+## <a name="n">N</a>[【TOP】](#top)
 ```
 number
 ```
 
-## O
+## <a name="o">O</a>[【TOP】](#top)
 ```
 object
 ```
 
-## P
+## <a name="p">P</a>[【TOP】](#top)
 ```
 package
 phase               [feɪz]              阶段
@@ -140,19 +140,19 @@ protocol            ['prəʊtəkɒl]        协议
 public
 ```
 
-## Q
+## <a name="q">Q</a>[【TOP】](#top)
 ```
 
 ```
 
-## R
+## <a name="r">R</a>[【TOP】](#top)
 ```
 reentrant           [riː'entrənt]
 runnable
 runtime
 ```
 
-## S
+## <a name="s">S</a>[【TOP】](#top)
 ```
 scanner             ['skænə]
 security            [sɪ'kjʊərətɪ]
@@ -165,44 +165,44 @@ switch
 synchronized        ['sɪŋkrənaɪzd]
 ```
 
-## T
+## <a name="t">T</a>[【TOP】](#top)
 ```
 thread
 throwable
 ```
 
-## U
+## <a name="u">U</a>[【TOP】](#top)
 ```
 undefined
 uppercase
 ```
 
-## V
+## <a name="v">V</a>[【TOP】](#top)
 ```
 
 ```
 
-## W
+## <a name="w">W</a>[【TOP】](#top)
 ```
 while
 ```
 
-## X
+## <a name="x">X</a>[【TOP】](#top)
 ```
 
 ```
 
-## Y
+## <a name="y">Y</a>[【TOP】](#top)
 ```
 
 ```
 
-## Z
+## <a name="z">Z</a>[【TOP】](#top)
 ```
 
 ```
 
-## 词组
+## <a name="word">词组</a>[【TOP】](#top)
 ```
 AI                  Artificial Intelligence                      人工智能
 AJAX                Asynchronous Javascript And XML              异步JavaScript和XML
@@ -211,6 +211,7 @@ AR                  Augmented Reality                            增强现实
 CDN                 Content Delivery Network                     内容分发网络
 CPU                 Central Processing Unit                      中央处理器
 DI                  Dependency Injection                         依赖注入
+DTO                 Data Transfer Object                         数据传输对象
 FTP                 File Transfer Protocol                       文件传输协议
 HTTP                HyperText Transfer Protocol                  超文本传输协议
 IoC                 Inversion of Control                         控制反转
@@ -222,6 +223,7 @@ JSON                JavaScript Object Notation                   JavaScript对�
 JVM                 Java Virtual Machine                         Java虚拟机
 ML                  Machine Learning                             机器学习
 OOP                 Object Oriented Programming                  面向对象编程
+POJO                Plain Ordinary Java Object                   简单的Java对象
 SQL                 Structured Query Language                    结构化查询语言
 RPC                 Remote Procedure Call Protocol               远程过程调用协议
 SFTP                Secure File Transfer Protocol                安全文件传送协议
@@ -229,6 +231,7 @@ SSH                 Secure Shell                                 安全外壳协
 TCP                 Transmission Control Protocol                传输控制协议
 URI                 Uniform Resource Identifier                  统一资源标识符
 URL                 Uniform Resource Locator                     统一资源定位符
+VO                  Value Object                                 值对象
 VPN                 Virtual Private Network                      虚拟专用网络
 VR                  Virtual Reality                              虚拟现实
 WWW                 World Wide Web                               万维网
