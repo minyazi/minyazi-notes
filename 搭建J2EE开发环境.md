@@ -9,6 +9,7 @@
 ## <a name="jdk">一、安装JDK</a>[【TOP】](#top)
 1. 安装包：jdk-8u131-windows-x64.exe
 2. 下载地址：http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+3. 安装步骤：
 ```
 
 ```
@@ -16,20 +17,23 @@
 ## <a name="eclipse">二、安装Eclipse</a>[【TOP】](#top)
 1. 安装包：eclipse-jee-neon-3-win32-x86_64.zip
 2. 下载地址：https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/neon/3/eclipse-jee-neon-3-win32-x86_64.zip
+3. 安装步骤：
 ```
 
 ```
 
 ## <a name="tomcat">三、安装Tomcat</a>[【TOP】](#top)
-1. 安装包：
-2. 下载地址：
+1. 安装包：apache-tomcat-7.0.78.zip
+2. 下载地址：http://tomcat.apache.org/download-70.cgi
+3. 安装步骤：
 ```
 
 ```
 
 ## <a name="mysql">四、安装MySQL</a>[【TOP】](#top)
-1. 安装包：
-2. 下载地址：
+1. 安装包：mysql-5.6.33-winx64.zip
+2. 下载地址：https://dev.mysql.com/downloads/mysql/5.6.html#downloads
+3. 安装步骤：
 ```
 
 ```
@@ -64,6 +68,18 @@ Are you sure you want to continue connecting (yes/no)?
 ## <a name="maven">六、安装Maven</a>[【TOP】](#top)
 1. 安装包：apache-maven-3.5.0-bin.zip
 2. 下载地址：https://archive.apache.org/dist/maven/maven-3/3.5.0/binaries/
+3. 安装步骤：
 ```
-
+(1)、将安装包直接解压到硬盘中，如F盘；
+(2)、配置环境变量：
+    在系统环境变量中增加变量M2_HOME，变量值为Maven的安装路径（如：F:\apache-maven-3.5.0），并在Path环境变量中
+    增加Maven的bin路径（%M2_HOME%\bin）；
+(3)、配置Maven本地仓库：
+    先从Maven安装路径的conf文件夹下拷贝settings.xml配置文件至用户主目录的.m2文件夹中，并在配置文件中增加如下配置：
+    <settings>
+        ...
+        <localRepository>F:\maven\repository</localRepository>
+        ...
+    </settings>
+    说明：“F:\maven\repository”即为自行创建的Maven本地仓库地址。
 ```
