@@ -1,7 +1,7 @@
 # <a name="top">搭建J2EE开发环境</a>
 * [一、安装JDK](#jdk)
-* [二、安装Eclipse](#eclipse)
-* [三、安装Tomcat](#tomcat)
+* [二、安装Tomcat](#tomcat)
+* [三、安装Eclipse](#eclipse)
 * [四、安装MySQL](#mysql)
 * [五、安装Git](#git)
 * [六、安装Maven](#maven)
@@ -11,23 +11,47 @@
 2. 下载地址：http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 3. 安装步骤：
 ```
-
+(1)、安装jdk-8u131-windows-x64.exe，默认选项安装即可；
+(2)、配置环境变量：
+    在系统环境变量中增加变量JAVA_HOME，变量值为JDK的安装路径（如：C:\Program Files\Java\jdk1.8.0_131），并在
+    Path环境变量中增加JDK的bin路径（%JAVA_HOME%\bin）。
 ```
 
-## <a name="eclipse">二、安装Eclipse</a>[【TOP】](#top)
-1. 安装包：eclipse-jee-neon-3-win32-x86_64.zip
-2. 下载地址：https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/neon/3/eclipse-jee-neon-3-win32-x86_64.zip
-3. 安装步骤：
-```
-
-```
-
-## <a name="tomcat">三、安装Tomcat</a>[【TOP】](#top)
+## <a name="tomcat">二、安装Tomcat</a>[【TOP】](#top)
 1. 安装包：apache-tomcat-7.0.78.zip
 2. 下载地址：http://tomcat.apache.org/download-70.cgi
 3. 安装步骤：
 ```
+将安装包直接解压到硬盘中即可，如F盘。
+```
 
+## <a name="eclipse">三、安装Eclipse</a>[【TOP】](#top)
+1. 安装包：eclipse-jee-neon-3-win32-x86_64.zip
+2. 下载地址：https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/neon/3/eclipse-jee-neon-3-win32-x86_64.zip
+3. 安装步骤：
+```
+(1)、将安装包直接解压到硬盘中，如F盘；
+(2)、设置用4个空格代替Tab键：
+    Window -> Preferences -> General -> Editors -> Text Editors，将“Insert spaces for tabs”选项勾选上，并
+    确认“Displayed tab width”的值是否为数字4，另外，也可将“Show whitespace characters(configure visibility)”
+    选项勾选上，用于将空白字符及换行符显示出来。
+    Window -> Preferences -> Java -> Code Style -> Formatter，由于“Eclipse [built-in]”样式模板修改不了，所以
+    可先基于该模板新建一个属于自己的样式模板，然后进入模板配置页面的“Indentation”选项卡，将“General settings”中的
+    “Tab policy”的值设置为“Spaces only”，另外，也可将“Line Wrapping”选项卡“General settings”中的“Maximum line
+    width”的值设为120，表示格式化代码时，超过120个字符将会自动换行。
+(3)、设置换行符使用Unix格式：
+    Window -> Preferences -> General -> Workspace，将“New text file line delimiter”的值设置为“Unix”。
+(4)、设置文件字符编码为UTF-8：
+    Window -> Preferences -> General -> Workspace，将“Text file encoding”的值设置为“UTF-8”。
+    Window -> Preferences -> General -> Content Types，选择“Text”中的“Java Properties File”，将底下的“Default
+    encoding”的值设置为“UTF-8”。
+(5)、设置主题风格：
+    先在[Eclipse Color Themes](http://www.eclipsecolorthemes.org/)下载自己喜欢的主题风格（如：Obsidian.epf），
+    然后通过File -> Import... -> General -> Preferences将所下载的EPF文件导入即可。
+(6)、设置默认JDK版本：
+    Window -> Preferences -> Java -> Installed JREs，在此增加已安装的JDK版本（如：jdk1.8.0_131），并勾选上作为默认版本。
+    Window -> Preferences -> Java -> Compiler，将“JDK Compliance”中的“Compiler compliance level”的值设置为默认JDK
+    版本（如：1.8）。
 ```
 
 ## <a name="mysql">四、安装MySQL</a>[【TOP】](#top)
