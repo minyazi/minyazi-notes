@@ -49,9 +49,10 @@
     先在[Eclipse Color Themes](http://www.eclipsecolorthemes.org/)下载自己喜欢的主题风格（如：Obsidian.epf），
     然后通过File -> Import... -> General -> Preferences将所下载的EPF文件导入即可。
 (6)、设置默认JDK版本：
-    Window -> Preferences -> Java -> Installed JREs，在此增加已安装的JDK版本（如：jdk1.8.0_131），并勾选上作为默认版本。
-    Window -> Preferences -> Java -> Compiler，将“JDK Compliance”中的“Compiler compliance level”的值设置为默认JDK
-    版本（如：1.8）。
+    Window -> Preferences -> Java -> Installed JREs，在此增加已安装的JDK版本（如：jdk1.8.0_131），并勾选上作为
+    默认版本。
+    Window -> Preferences -> Java -> Compiler，将“JDK Compliance”中的“Compiler compliance level”的值设置为
+    默认JDK版本（如：1.8）。
 ```
 
 ## <a name="mysql">四、安装MySQL</a>[【TOP】](#top)
