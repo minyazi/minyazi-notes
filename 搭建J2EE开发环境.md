@@ -64,32 +64,44 @@
 (2)、配置环境变量：
     在Path环境变量中增加MySQL的bin路径（F:\MySQL\MySQL Server 5.6\bin）；
 (3)、配置MySQL：
-    进入MySQL安装目录（F:\MySQL\MySQL Server 5.6），拷贝my-default.ini文件，并更名为my.ini，在其中增加以下配置项：
+    进入MySQL安装目录（F:\MySQL\MySQL Server 5.6），拷贝my-default.ini配置文件，并更名为my.ini，在其中增加以下配置项：
     [mysqld]
     ...
     basedir=F:\MySQL\MySQL Server 5.6
     datadir=F:\MySQL\MySQL Server 5.6\data
     port=3306
-    character_set_server=utf8
-    ...
-    sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
-    
-    [client]
-    port=3306
-    default-character-set=utf8
-    
-    [mysqldump]
-    user=root
-    password=rootroot
+    ...
 (4)、运行cmd，执行以下命令安装MySQL：
     F:
     cd F:\MySQL\MySQL Server 5.6\bin
     mysqld -install
-    PS：卸载MySQL可在cmd中执行mysqld -remove命令。
+    PS：卸载MySQL可在cmd中执行“mysqld -remove”命令。
 (5)、MySQL安装成功后，继续执行以下命令启动MySQL服务：
     net start mysql
-    PS：停止MySQL服务可在cmd中执行net stop mysql命令。
-(6)、MySQL服务启动后，即可执行mysql -uroot -prootroot命令进入MySQL命令行了。
+    PS：停止MySQL服务可在cmd中执行“net stop mysql”命令。
+(6)、MySQL服务启动后，可执行以下命令进入MySQL命令行：
+    mysql -uroot -p
+    PS：第一次执行该命令不用输入密码，直接回车即可。
+(7)、配置MySQL字符编码：
+    修改my.ini配置文件，在其中增加以下配置项：
+    [mysqld]
+    ...
+    port=3306
+    character_set_server=utf8
+    ...
+    [client]
+    port=3306
+    default-character-set=utf8
+    然后重启MySQL服务即可。
+    PS：可在MySQL命令行中执行“show variables like 'char%';”命令查看字符编码。
+(8)、配置root用户密码：
+    
+    
+    [mysqldump]
+    user=root
+    password=rootroot
+    
+
 ```
 
 ## <a name="git">五、安装Git</a>[【TOP】](#top)
