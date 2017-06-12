@@ -60,7 +60,36 @@
 2. 下载地址：https://dev.mysql.com/downloads/mysql/5.6.html#downloads
 3. 安装步骤：
 ```
-
+(1)、将安装包直接解压到硬盘中，如F盘MySQL文件夹中，并将解压后的文件夹改名为MySQL Server 5.6；
+(2)、配置环境变量：
+    在Path环境变量中增加MySQL的bin路径（F:\MySQL\MySQL Server 5.6\bin）；
+(3)、配置MySQL：
+    进入MySQL安装目录（F:\MySQL\MySQL Server 5.6），拷贝my-default.ini文件，并更名为my.ini，在其中增加以下配置项：
+    [mysqld]
+    ...
+    basedir=F:\MySQL\MySQL Server 5.6
+    datadir=F:\MySQL\MySQL Server 5.6\data
+    port=3306
+    character_set_server=utf8
+    ...
+    sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
+    
+    [client]
+    port=3306
+    default-character-set=utf8
+    
+    [mysqldump]
+    user=root
+    password=rootroot
+(4)、运行cmd，执行以下命令安装MySQL：
+    F:
+    cd F:\MySQL\MySQL Server 5.6\bin
+    mysqld -install
+    PS：卸载MySQL可在cmd中执行mysqld -remove命令。
+(5)、MySQL安装成功后，继续执行以下命令启动MySQL服务：
+    net start mysql
+    PS：停止MySQL服务可在cmd中执行net stop mysql命令。
+(6)、MySQL服务启动后，即可执行mysql -uroot -prootroot命令进入MySQL命令行了。
 ```
 
 ## <a name="git">五、安装Git</a>[【TOP】](#top)
@@ -75,7 +104,7 @@
     git config --global user.email "email@example.com"     ##配置用户邮箱
     git config --global core.autocrlf false                ##配置提交时不自动转换换行符
     git config --global core.safecrlf true                 ##配置拒绝提交包含混合换行符的文件
-(4)、打开DOS命令行界面，执行以下命令创建SSH Key：
+(4)、运行cmd，执行以下命令创建SSH Key：
     ssh-keygen -t rsa -C "email@example.com"
     说明：该命令执行过后，会在用户的主目录（如：C:\Users\Administrator）下生成.ssh文件夹，文件夹里面有id_rsa和
     id_rsa.pub两个文件，这两个文件是SSH Key的秘钥对，其中，id_rsa是私钥，id_rsa.pub是公钥。
