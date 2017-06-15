@@ -64,7 +64,8 @@
 (2)、配置环境变量：
     在Path环境变量中增加MySQL的bin路径（F:\MySQL\MySQL Server 5.6\bin）；
 (3)、配置MySQL：
-    进入MySQL安装目录（F:\MySQL\MySQL Server 5.6），拷贝一份my-default.ini配置文件，并更名为my.ini，在其中增加以下配置项：
+    进入MySQL安装目录（F:\MySQL\MySQL Server 5.6），拷贝一份my-default.ini配置文件，并更名为my.ini，在其中增加
+    以下配置项：
     [mysqld]
     ...
     basedir=F:\MySQL\MySQL Server 5.6
