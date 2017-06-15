@@ -64,7 +64,7 @@
 (2)、配置环境变量：
     在Path环境变量中增加MySQL的bin路径（F:\MySQL\MySQL Server 5.6\bin）；
 (3)、配置MySQL：
-    进入MySQL安装目录（F:\MySQL\MySQL Server 5.6），拷贝my-default.ini配置文件，并更名为my.ini，在其中增加以下配置项：
+    进入MySQL安装目录（F:\MySQL\MySQL Server 5.6），拷贝一份my-default.ini配置文件，并更名为my.ini，在其中增加以下配置项：
     [mysqld]
     ...
     basedir=F:\MySQL\MySQL Server 5.6
@@ -95,13 +95,13 @@
     然后重启MySQL服务即可。
     PS：可在MySQL命令行中执行“show variables like 'char%';”命令查看字符编码。
 (8)、配置root用户密码：
-    
-    
-    [mysqldump]
-    user=root
-    password=rootroot
-    
-
+    MySQL服务启动后，在cmd中执行以下命令：
+    mysqladmin -uroot -p password rootroot
+    密码修改成功后即可执行“mysql -uroot -prootroot”命令进入MySQL命令行了。
+(9)、配置MySQL允许远程连接：
+    进入MySQL命令行，执行以下SQL：
+    GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'rootroot' WITH GRANT OPTION;
+    FLUSH PRIVILEGES;
 ```
 
 ## <a name="git">五、安装Git</a>[【TOP】](#top)
