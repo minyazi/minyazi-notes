@@ -154,7 +154,7 @@ Are you sure you want to continue connecting (yes/no)?
 
 ## <a name="m2eclipse">七、安装M2Eclipse</a>[【TOP】](#top)
 1. 安装包：M2Eclipse.zip
-2. 下载地址：http://pan.baidu.com/s/1c2b7eRe
+2. 下载地址：https://pan.baidu.com/s/1c2b7eRe
 3. 安装步骤：
 ```
 (1)、新建Eclipse插件目录，如：F:\eclipseplugins；
