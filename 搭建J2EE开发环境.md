@@ -5,6 +5,7 @@
 * [四、安装MySQL](#mysql)
 * [五、安装Git](#git)
 * [六、安装Maven](#maven)
+* [七、安装M2Eclipse](#m2eclipse)
 
 ## <a name="jdk">一、安装JDK</a>[【TOP】](#top)
 1. 安装包：jdk-8u131-windows-x64.exe
@@ -149,4 +150,19 @@ Are you sure you want to continue connecting (yes/no)?
         ...
     </settings>
     说明：“F:\maven\repository”即为自行创建的Maven本地仓库地址。
+```
+
+## <a name="m2eclipse">七、安装M2Eclipse</a>[【TOP】](#top)
+1. 安装包：M2Eclipse.zip
+2. 下载地址：http://pan.baidu.com/s/1c2b7eRe
+3. 安装步骤：
+```
+(1)、新建Eclipse插件目录，如：F:\eclipseplugins；
+(2)、将安装包解压到Eclipse插件目录中；
+(3)、在Eclipse安装目录中新建links文件夹，并在links文件夹中新建M2Eclipse.link文件，文件内容为：
+    path=F:\\eclipseplugins\\M2Eclipse
+(4)、启动Eclipse，配置Maven：
+    Window -> Preferences -> Maven -> Installations，添加已安装的Maven版本（如：F:\apache-maven-3.5.0）；
+    Window -> Preferences -> Maven -> User Settings，配置Maven的settings.xml文件目录（如：
+    C:\Users\Administrator\.m2\settings.xml）。
 ```
