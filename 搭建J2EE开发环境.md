@@ -8,27 +8,27 @@
 * [七、安装M2Eclipse](#m2eclipse)
 
 ## <a name="jdk">一、安装JDK</a>[【TOP】](#top)
-1. 安装包：jdk-8u131-windows-x64.exe
-2. 下载地址：http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+1. 安装包：jdk-6u45-windows-x64.exe
+2. 下载地址：http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase6-419409.html
 3. 安装步骤：
 ```
-(1)、安装jdk-8u131-windows-x64.exe，默认选项安装即可；
+(1)、安装jdk-6u45-windows-x64.exe，默认选项安装即可；
 (2)、配置环境变量：
-    在系统环境变量中增加变量JAVA_HOME，变量值为JDK的安装路径（如：C:\Program Files\Java\jdk1.8.0_131），并在
+    在系统环境变量中增加变量JAVA_HOME，变量值为JDK的安装路径（如：C:\Program Files\Java\jdk1.6.0_45），并在
     Path环境变量中增加JDK的bin路径（%JAVA_HOME%\bin）。
 ```
 
 ## <a name="tomcat">二、安装Tomcat</a>[【TOP】](#top)
-1. 安装包：apache-tomcat-7.0.78.zip
-2. 下载地址：http://tomcat.apache.org/download-70.cgi
+1. 安装包：apache-tomcat-6.0.53.zip
+2. 下载地址：http://tomcat.apache.org/download-60.cgi
 3. 安装步骤：
 ```
 将安装包直接解压到硬盘中即可，如F盘。
 ```
 
 ## <a name="eclipse">三、安装Eclipse</a>[【TOP】](#top)
-1. 安装包：eclipse-jee-neon-3-win32-x86_64.zip
-2. 下载地址：https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/neon/3/eclipse-jee-neon-3-win32-x86_64.zip
+1. 安装包：eclipse-jee-juno-SR2-win32-x86_64.zip
+2. 下载地址：http://www.eclipse.org/downloads/packages/release/juno/sr2
 3. 安装步骤：
 ```
 (1)、将安装包直接解压到硬盘中，如F盘；
@@ -50,10 +50,10 @@
     先在[Eclipse Color Themes](http://www.eclipsecolorthemes.org/)下载自己喜欢的主题风格（如：Obsidian.epf），
     然后通过File -> Import... -> General -> Preferences将所下载的EPF文件导入即可。
 (6)、设置默认JDK版本：
-    Window -> Preferences -> Java -> Installed JREs，在此增加已安装的JDK版本（如：jdk1.8.0_131），并勾选上作为
+    Window -> Preferences -> Java -> Installed JREs，在此增加已安装的JDK版本（如：jdk1.6.0_45），并勾选上作为
     默认版本。
     Window -> Preferences -> Java -> Compiler，将“JDK Compliance”中的“Compiler compliance level”的值设置为
-    默认JDK版本（如：1.8）。
+    默认JDK版本（如：1.6）。
 ```
 
 ## <a name="mysql">四、安装MySQL</a>[【TOP】](#top)
@@ -134,13 +134,13 @@ Are you sure you want to continue connecting (yes/no)?
 这是因为Git连接GitHub时使用的是SSH连接，而SSH连接在第一次验证GitHub服务器的Key时，需要确认GitHub的Key的指纹信息是否真的来自GitHub服务器，此时只需输入yes回车即可。
 
 ## <a name="maven">六、安装Maven</a>[【TOP】](#top)
-1. 安装包：apache-maven-3.5.0-bin.zip
-2. 下载地址：https://archive.apache.org/dist/maven/maven-3/3.5.0/binaries/
+1. 安装包：apache-maven-3.2.5-bin.zip
+2. 下载地址：https://archive.apache.org/dist/maven/maven-3/3.2.5/binaries/
 3. 安装步骤：
 ```
 (1)、将安装包直接解压到硬盘中，如F盘；
 (2)、配置环境变量：
-    在系统环境变量中增加变量M2_HOME，变量值为Maven的安装路径（如：F:\apache-maven-3.5.0），并在Path环境变量中
+    在系统环境变量中增加变量M2_HOME，变量值为Maven的安装路径（如：F:\apache-maven-3.2.5），并在Path环境变量中
     增加Maven的bin路径（%M2_HOME%\bin）；
 (3)、配置Maven本地仓库：
     先从Maven安装路径的conf文件夹下拷贝settings.xml配置文件至用户主目录的.m2文件夹中，并在配置文件中增加如下配置：
@@ -154,7 +154,7 @@ Are you sure you want to continue connecting (yes/no)?
 
 ## <a name="m2eclipse">七、安装M2Eclipse</a>[【TOP】](#top)
 1. 安装包：M2Eclipse.zip
-2. 下载地址：https://pan.baidu.com/s/1c2b7eRe
+2. 下载地址：https://pan.baidu.com/s/1nuJDINv
 3. 安装步骤：
 ```
 (1)、新建Eclipse插件目录，如：F:\eclipseplugins；
@@ -162,7 +162,8 @@ Are you sure you want to continue connecting (yes/no)?
 (3)、在Eclipse安装目录中新建links文件夹，并在links文件夹中新建M2Eclipse.link文件，文件内容为：
     path=F:\\eclipseplugins\\M2Eclipse
 (4)、启动Eclipse，配置Maven：
-    Window -> Preferences -> Maven -> Installations，添加已安装的Maven版本（如：F:\apache-maven-3.5.0）；
+    Window -> Preferences -> Maven，将“Download repository index updates on startup”选项取消勾选；
+    Window -> Preferences -> Maven -> Installations，添加已安装的Maven版本（如：F:\apache-maven-3.2.5）；
     Window -> Preferences -> Maven -> User Settings，配置Maven的settings.xml文件目录（如：
     C:\Users\Administrator\.m2\settings.xml）。
 ```
