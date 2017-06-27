@@ -21,6 +21,7 @@
 * [十九、借助maven-javadoc-plugin插件生成javadoc文档的jar包](#anchor19)
 * [二十、Maven聚合与继承](#anchor20)
 * [二十一、使用Maven构建Web应用](#anchor21)
+* [二十二、借助jetty-maven-plugin插件部署Web应用进行测试](#anchor22)
 
 ## <a name="anchor0">Maven标准目录布局</a>
 ![Maven标准目录布局](images/Maven标准目录布局.png "Maven标准目录布局")
@@ -507,7 +508,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 ```
 
 ## <a name="anchor15">十五、借助maven-shade-plugin插件生成可执行的jar包</a>[【TOP】](#top)
-**PS**：该方式会同时打包运行时依赖jar包中的内容。
+**pom.xml**
 ```xml
 <project>
     ...
@@ -538,8 +539,10 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
     ...
 </project>
 ```
+**PS**：该方式会同时打包运行时依赖jar包中的内容。
 
 ## <a name="anchor16">十六、借助maven-dependency-plugin插件将依赖jar包拷贝到指定目录</a>[【TOP】](#top)
+**pom.xml**
 ```xml
 <project>
     ...
@@ -568,6 +571,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 ```
 
 ## <a name="anchor17">十七、配置生成可执行jar包（包含运行时依赖jar包的Classpath配置）</a>[【TOP】](#top)
+**pom.xml**
 ```xml
 <project>
     ...
@@ -595,6 +599,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 ```
 
 ## <a name="anchor18">十八、借助maven-source-plugin插件生成源码的jar包</a>[【TOP】](#top)
+**pom.xml**
 ```xml
 <project>
     ...
@@ -625,6 +630,7 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 ```
 
 ## <a name="anchor19">十九、借助maven-javadoc-plugin插件生成javadoc文档的jar包</a>[【TOP】](#top)
+**pom.xml**
 ```xml
 <project>
     ...
@@ -655,6 +661,62 @@ mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail
 ```
 
 ## <a name="anchor21">二十一、使用Maven构建Web应用</a>[【TOP】](#top)
+**pom.xml**
+```xml
+<project>
+    ...
+    <build>
+        <plugins>
+            <!-- 配置Web应用的构建目录 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+                    <archive>
+                        <addMavenDescriptor>false</addMavenDescriptor>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    ...
+</project>
 ```
 
+## <a name="anchor22">二十二、借助jetty-maven-plugin插件部署Web应用进行测试</a>[【TOP】](#top)
+**pom.xml**
+```xml
+<project>
+    ...
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>8.1.16.v20140903</version>
+                <configuration>
+                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <webAppConfig>
+                        <contextPath>/${project.build.finalName}</contextPath>
+                    </webAppConfig>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    ...
+</project>
+```
+**settings.xml**
+```xml
+<settings>
+    ...
+    <pluginGroups>
+        ...
+        <pluginGroup>org.mortbay.jetty</pluginGroup>
+	...
+    </pluginGroups>
+    ...
+</settings>
 ```
