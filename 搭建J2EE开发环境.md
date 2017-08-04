@@ -36,10 +36,10 @@
     Window -> Preferences -> General -> Editors -> Text Editors，将“Insert spaces for tabs”选项勾选上，并
     确认“Displayed tab width”的值是否为数字4，另外，也可将“Show whitespace characters(configure visibility)”
     选项勾选上，用于将空白字符及换行符显示出来。
-    Window -> Preferences -> Java -> Code Style -> Formatter，由于“Eclipse [built-in]”样式模板修改不了，所以
-    可先基于该模板新建一个属于自己的样式模板，然后进入模板配置页面的“Indentation”选项卡，将“General settings”中的
-    “Tab policy”的值设置为“Spaces only”，另外，也可将“Line Wrapping”选项卡“General settings”中的“Maximum line
-    width”的值设为120，表示格式化代码时，超过120个字符将会自动换行。
+    Window -> Preferences -> Java（和JavaScript） -> Code Style -> Formatter，由于“Eclipse [built-in]”样式模
+    板修改不了，所以可先基于该模板新建一个属于自己的样式模板，然后进入模板配置页面的“Indentation”选项卡，将“General
+    settings”中的“Tab policy”的值设置为“Spaces only”，另外，也可将“Line Wrapping”选项卡“General settings”中的
+    “Maximum line width”的值设为120，表示格式化代码时，超过120个字符将会自动换行。
 (3)、设置换行符使用Unix格式：
     Window -> Preferences -> General -> Workspace，将“New text file line delimiter”的值设置为“Unix”。
 (4)、设置文件字符编码为UTF-8：
