@@ -258,4 +258,7 @@ B2B       Business-to-Business                                   企业对企业
 B2C       Business-to-Customer                                   商对客电子商务模式
 C2C       Customer-to-Customer                                   个人与个人之间的电子商务
 O2O       Online-to-Offline                                      线上线下一体化
+
+SEO       Search Engine Optimization                             搜索引擎优化
+SEM       Search Engine Marketing                                搜索引擎营销
 ```
