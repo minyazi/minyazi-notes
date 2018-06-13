@@ -28,18 +28,18 @@ secure copy，安全拷贝
 ```
 
 ## <a name="anchor4">四、其他</a>[【TOP】](#top)
-```
-ls -l > test.txt                     ->   不保留test.txt文件的内容，将命令执行结果输出到test.txt文件中，终端不显示执行结果
-ls -l >> test.txt                    ->   保留test.txt文件的内容，将命令执行结果输出到test.txt文件中，终端不显示执行结果
-ls -l | tee test.txt                 ->   不保留test.txt文件的内容，将命令执行结果输出到test.txt文件中，终端显示执行结果
-ls -l | tee -a test.txt              ->   保留test.txt文件的内容，将命令执行结果输出到test.txt文件中，终端显示执行结果
-find . -name test.txt                ->   在当前目录及其子目录下查找test.txt文件
-grep test *                          ->   在当前目录下的所有文件中查找test字符串
-grep -r test *                       ->   在当前目录及其子目录下的所有文件中查找test字符串
-ls -lt                               ->   按时间排序，降序
-ls -ltr                              ->   按时间排序，升序
-ls -lS 或 ls -l --sort=size          ->   按大小排序，降序
-ls -lSr 或 ls -lr --sort=size        ->   按大小排序，升序
-ls -lX 或 ls -l --sort=extension     ->   按扩展名排序，降序
-ls -lXr 或 ls -lr --sort=extension   ->   按扩展名排序，升序
-```
+| 命令 | 说明 |
+| ---------- | ---------- |
+| ls -l > test.txt | 不保留test.txt文件的内容，将命令执行结果输出到test.txt文件中，终端不显示执行结果 |
+| ls -l >> test.txt | 保留test.txt文件的内容，将命令执行结果输出到test.txt文件中，终端不显示执行结果 |
+| ls -l | tee test.txt | 不保留test.txt文件的内容，将命令执行结果输出到test.txt文件中，终端显示执行结果 |
+| ls -l | tee -a test.txt | 保留test.txt文件的内容，将命令执行结果输出到test.txt文件中，终端显示执行结果 |
+| find . -name test.txt | 在当前目录及其子目录下查找test.txt文件 |
+| grep test * | 在当前目录下的所有文件中查找test字符串 |
+| grep -r test * | 在当前目录及其子目录下的所有文件中查找test字符串 |
+| ls -lt | 按时间排序，降序 |
+| ls -ltr | 按时间排序，升序 |
+| ls -lS 或 ls -l --sort=size | 按大小排序，降序 |
+| ls -lSr 或 ls -lr --sort=size | 按大小排序，升序 |
+| ls -lX 或 ls -l --sort=extension | 按扩展名排序，降序 |
+| ls -lXr 或 ls -lr --sort=extension | 按扩展名排序，升序 |
