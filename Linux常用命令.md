@@ -32,8 +32,8 @@ secure copy，安全拷贝
 | ---------- | ---------- |
 | ls -l > test.txt | 不保留test.txt文件的内容，将命令执行结果输出到test.txt文件中，终端不显示执行结果 |
 | ls -l >> test.txt | 保留test.txt文件的内容，将命令执行结果输出到test.txt文件中，终端不显示执行结果 |
-| ls -l | tee test.txt | 不保留test.txt文件的内容，将命令执行结果输出到test.txt文件中，终端显示执行结果 |
-| ls -l | tee -a test.txt | 保留test.txt文件的内容，将命令执行结果输出到test.txt文件中，终端显示执行结果 |
+| ls -l \| tee test.txt | 不保留test.txt文件的内容，将命令执行结果输出到test.txt文件中，终端显示执行结果 |
+| ls -l \| tee -a test.txt | 保留test.txt文件的内容，将命令执行结果输出到test.txt文件中，终端显示执行结果 |
 | find . -name test.txt | 在当前目录及其子目录下查找test.txt文件 |
 | grep test * | 在当前目录下的所有文件中查找test字符串 |
 | grep -r test * | 在当前目录及其子目录下的所有文件中查找test字符串 |
