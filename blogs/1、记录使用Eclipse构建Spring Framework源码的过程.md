@@ -42,24 +42,24 @@
 
 1. spring-context和spring-web模块编译出错，如图所示：
 
-![](blogs/images/1/3.1.1.jpg)
+![](images/1/3.1.1.jpg)
 
-![](blogs/images/1/3.1.2.jpg)
+![](images/1/3.1.2.jpg)
 
 解决办法如图所示：
 
-![](blogs/images/1/3.1.3.jpg)
+![](images/1/3.1.3.jpg)
 
 **PS**：添加Access Rule（Accessible，com/sun/net/httpserver/**）。
 
 2. spring-build-src模块编译出错，如图所示：
 
-![](blogs/images/1/3.2.1.jpg)
+![](images/1/3.2.1.jpg)
 
-![](blogs/images/1/3.2.2.jpg)
+![](images/1/3.2.2.jpg)
 
 解决办法如图所示：
 
-![](blogs/images/1/3.2.3.jpg)
+![](images/1/3.2.3.jpg)
 
-![](blogs/images/1/3.2.4.jpg)
+![](images/1/3.2.4.jpg)
